@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const songsReducer = () => {
+const songsReducer = () => { // using a static list in this example
 	return [
 		{title: "All Star", duration: "3:50"},
 		{title: "Spitfire", duration: "7:24"},
@@ -9,8 +9,8 @@ const songsReducer = () => {
 	];
 };
 
-const selectedSongReducer = (selectedSong = null, action) => {
-	if (action.type === "SONG_SELECTED") {
+const selectedSongReducer = (selectedSong = null /*default value for selectedSong*/, action) => {
+	if (action.type === "SONG_SELECTED" /*redundant since there's only one but in case I want to add more*/) {
 		return action.payload;
 	}
 
